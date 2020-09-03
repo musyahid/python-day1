@@ -52,7 +52,7 @@ def bubbleTugas(listku):
             j+=1
             
         print(listku)
-        #Jika penanda 'perubahan' tidak terjadi maka perulangan berhenti dan artinya data sudah terurut tanpa melakukan perulangan lagi.
+        #Jika penanda 'pesrubahan' tidak terjadi maka perulangan berhenti dan artinya data sudah terurut tanpa melakukan perulangan lagi.
         if not perubahan:
             print("hasil akhir = %s" %str(listku))
         sesi-=1
@@ -60,17 +60,13 @@ mylist= [12,3,5,4,8,9]
 bubbleTugas(mylist)
 
 # 5. Masking =========================================
-def censor(text, word):
-    wordlist = text.split()
-    new_words_list = []
-    for item in wordlist:
-        if item.find(word) > -1:
-            new_words_list.append( '*' * len(word))
-        else:
-            new_words_list.append(item)
-    return " ".join(new_words_list)
+secret_text = "23dn3ir30fd2eddd"
+def masking(n):
+    var1 = str(n)
+    masked = var1[-3:].rjust(len(var1),"#")
+    return masked
 
-print(censor("You dirty guy and dirty boy dirty.", "dirty"))
+print(masking(secret_text))
 
 # 6. Missing Letter =========================================
 def missing_elements(L):
