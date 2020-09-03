@@ -1,3 +1,5 @@
+import json
+
 # 1. Combine several Lists =========================================
 first = ['Behind', 'every', 'great', 'man']
 second = ['is', 'a', 'woman']
@@ -13,6 +15,17 @@ def listToString(s):
 
 print(listToString(data))  
 
+# 2. Merge List
+
+jsonList = []
+menus = ["chicken strip", "beef burger", "steakhouse", "mushroom swiss", "whopper"] # List A
+price = [15,10,12,20,30] # List B
+
+for i in range(0,len(menus)):
+    jsonList.append({menus[i] : price[i]})
+
+
+print(json.dumps(jsonList, indent = 1))
 
 #3. Char Counter =========================================
 def check_freq(x):
@@ -46,6 +59,19 @@ def bubbleTugas(listku):
 mylist= [12,3,5,4,8,9]
 bubbleTugas(mylist)
 
+# 5. Masking =========================================
+def censor(text, word):
+    wordlist = text.split()
+    new_words_list = []
+    for item in wordlist:
+        if item.find(word) > -1:
+            new_words_list.append( '*' * len(word))
+        else:
+            new_words_list.append(item)
+    return " ".join(new_words_list)
+
+print(censor("You dirty guy and dirty boy dirty.", "dirty"))
+
 # 6. Missing Letter =========================================
 def missing_elements(L):
     start, end = L[0], L[-1]
@@ -61,21 +87,6 @@ list_letters_second = ["X","Z"]
 
 print("find_missing_letter : ", find_missing_letter(list_letters_first))
 print("list_letters_second : ", find_missing_letter(list_letters_second))
-
-# 5. Masking =========================================
-def censor(text, word):
-    wordlist = text.split()
-    new_words_list = []
-    for item in wordlist:
-        if item.find(word) > -1:
-            new_words_list.append( '*' * len(word))
-        else:
-            new_words_list.append(item)
-    return " ".join(new_words_list)
-
-print(censor("You dirty guy and dirty boy dirty.", "dirty"))
-
-
 
 # 7 Sorting Odd Numbers =========================================
 
